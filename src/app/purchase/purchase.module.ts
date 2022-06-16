@@ -5,11 +5,14 @@ import { PurchaseOrderComponent } from './purchase-order/purchase-order.componen
 
 
 @NgModule({
-  declarations: [
-    PurchaseOrderComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        PurchaseOrderComponent
+    ],
+    exports: [
+        PurchaseOrderComponent
+    ],
+    imports: [
+        CommonModule
+    ]
 })
 export class PurchaseModule { }

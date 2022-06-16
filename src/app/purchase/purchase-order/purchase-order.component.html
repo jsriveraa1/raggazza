@@ -1,1 +1,80 @@
-<p>purchase-order works!</p>
+<div class="container">
+  <div class="espacio">
+    <h2 id='posible'><strong>Orden de compra Raggazza</strong></h2>
+    <p>Por favor escriba y seleccione la información solicitada.</p>
+
+    <form id="">
+      <div class="accordion accordion-prueba" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item bordes-accordion">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Información de envio
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+               aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+              <div class="row">
+                <div class="col-xs-12 col-md-12">
+                  <label for="nombre" class="form-label">Nombre <strong style="color: red;">*</strong></label>
+                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de quien recibe" required>
+                  <div class="invalid-feedback">
+                    Ingrese el nombre de la persona quien recibira el producto
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                  <label for="direccion" class="form-label">Capitales <strong style="color: red;">*</strong></label>
+                  <select class="form-select" required>
+                    <option selected>Cúcuta</option>
+                    <option>Bogotá</option>
+                    <option>Bucaramanga</option>
+                    <option>Medellin</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Ingrese la dirección de la persona quien recibira el producto
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                  <label for="direccion" class="form-label">Dirección <strong style="color: red;">*</strong></label>
+                  <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección de quien recibe" required>
+                  <div class="invalid-feedback">
+                    Ingrese la dirección de la persona quien recibira el producto
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                  <label for="telefono" class="form-label">Telefono <strong style="color: red;">*</strong></label>
+                  <input type="number" onkeyup="cambiaMayuscula(this)" class="form-control" name="telefono" id="telefono" placeholder="Telefono de quien recibe" pattern="([0-9]{7,10})$" required>
+                  <div class="invalid-feedback">
+                    Ingrese el telefono de la persona quien recibira el producto
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              Seleccione los productos
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+               aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse
+              plugin adds the appropriate classes that we use to style each element. These classes control the overall
+              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
+              custom
+              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within
+              the
+              <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <span><i class="fa-regular fa-cart-shopping"></i></span>
+      </div>
+    </form>
+  </div>
+</div>

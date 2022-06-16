@@ -1,0 +1,30 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');*/
+
+.container {
+  /*background-color: white;*/
+}
+
+.accordion-button:not(.collapsed) {
+  color: black;
+  /*font-weight: bold;*/
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #faf1ef;
+}
+
+.espacio {
+  padding: 5% 5% 5% 5%;
+}
+
+.card_test {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom, #E7B8B0, #E7B8B0);
+  border-image-slice: 1;
+}
+
+.bordes-accordion{
+  /*border: 5px solid #fce4de;*/
+  border: 5px solid #f7d8e3
+;
+}
