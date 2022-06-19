@@ -112,5 +112,7 @@
       }
     }
   },
-  "defaultProject": "ragazza"
+  "cli": {
+    "analytics": false
+  }
 }

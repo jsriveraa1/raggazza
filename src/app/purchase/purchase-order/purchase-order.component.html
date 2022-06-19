@@ -1,79 +1,124 @@
 <div class="container">
   <div class="espacio">
-    <h2 id='posible'><strong>Orden de compra Raggazza</strong></h2>
-    <p>Por favor escriba y seleccione la información solicitada.</p>
+    <div style="background: white; border-radius: 15% 15% 15% 15%;">
+      <h2 id='posible' style="padding: 16px 20px 0 20px"><strong>Orden de compra Raggazza</strong></h2>
+      <p style="padding: 0 20px 16px 20px;">Por favor escriba y seleccione la información solicitada.</p>
+    </div>
 
-    <form id="">
-      <div class="accordion accordion-prueba" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item bordes-accordion">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-              Información de envio
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-               aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">
-              <div class="row">
-                <div class="col-xs-12 col-md-12">
-                  <label for="nombre" class="form-label">Nombre <strong style="color: red;">*</strong></label>
-                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de quien recibe" required>
-                  <div class="invalid-feedback">
-                    Ingrese el nombre de la persona quien recibira el producto
+    <form [formGroup]="purchaseForm" id="purchaseForm">
+      <div class="col-xs-12 col-md-12 form-group">
+        <div class="accordion accordion-prueba" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item bordes-accordion">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseOne">
+                <span style="padding-right: 5%;"><h1 style="font-family: arial; margin-bottom: 0;">1</h1></span>Información
+                de envio
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                 aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <div class="row">
+
+                  <div class="col-xs-12 col-md-12">
+                    <label for="nombre" class="form-label">Nombre <strong style="color: red;">*</strong></label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" formControlName="nombre"
+                           placeholder="Nombre de quien recibe" required>
+                    <span *ngIf="(this.purchaseForm.get('nombre')?.dirty || this.purchaseForm.get('nombre')?.touched) &&
+                    this.purchaseForm.get('nombre')?.hasError('required')" class="alert-message">
+                      <fa-icon [icon]="alertField" class="padding-icon-alert"></fa-icon>
+                      Ingrese el nombre de la persona quien recibira el producto
+                    </span>
                   </div>
-                </div>
-                <div class="col-xs-12 col-md-12">
-                  <label for="direccion" class="form-label">Capitales <strong style="color: red;">*</strong></label>
-                  <select class="form-select" required>
-                    <option selected>Cúcuta</option>
-                    <option>Bogotá</option>
-                    <option>Bucaramanga</option>
-                    <option>Medellin</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Ingrese la dirección de la persona quien recibira el producto
+
+                  <div class="col-xs-12 col-md-12">
+                    <label for="ciudad" class="form-label">Ciudad <strong style="color: red;">*</strong></label>
+                    <select class="form-select" name="ciudad" id="ciudad" formControlName="ciudad" required>
+                      <option selected disabled>Seleccione</option>
+                      <option>Cúcuta</option>
+                      <option>Bogotá</option>
+                      <option>Bucaramanga</option>
+                      <option>Medellin</option>
+                    </select>
+                    <span *ngIf="(this.purchaseForm.get('ciudad')?.dirty || this.purchaseForm.get('ciudad')?.touched) &&
+                    this.purchaseForm.get('ciudad')?.hasError('required')" class="alert-message" >
+                      <fa-icon [icon]="alertField" class="padding-icon-alert"></fa-icon>
+                      Ingrese la ciudad de la persona quien recibira el producto
+                    </span>
                   </div>
-                </div>
-                <div class="col-xs-12 col-md-12">
-                  <label for="direccion" class="form-label">Dirección <strong style="color: red;">*</strong></label>
-                  <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección de quien recibe" required>
-                  <div class="invalid-feedback">
-                    Ingrese la dirección de la persona quien recibira el producto
+
+                  <div class="col-xs-12 col-md-12">
+                    <label for="direccion" class="form-label">Dirección <strong style="color: red;">*</strong></label>
+                    <input type="text" class="form-control" name="direccion" id="direccion"
+                           placeholder="Dirección de quien recibe" formControlName="direccion" required>
+                    <span *ngIf="(this.purchaseForm.get('direccion')?.dirty || this.purchaseForm.get('direccion')?.touched) &&
+                    this.purchaseForm.get('direccion')?.hasError('required')" class="alert-message">
+                      <fa-icon [icon]="alertField" class="padding-icon-alert"></fa-icon>
+                      Ingrese la dirección de la persona quien recibira el producto
+                    </span>
                   </div>
-                </div>
-                <div class="col-xs-12 col-md-12">
-                  <label for="telefono" class="form-label">Telefono <strong style="color: red;">*</strong></label>
-                  <input type="number" onkeyup="cambiaMayuscula(this)" class="form-control" name="telefono" id="telefono" placeholder="Telefono de quien recibe" pattern="([0-9]{7,10})$" required>
-                  <div class="invalid-feedback">
-                    Ingrese el telefono de la persona quien recibira el producto
+
+                  <div class="col-xs-12 col-md-12">
+                    <label for="telefono" class="form-label">Telefono <strong style="color: red;">*</strong></label>
+                    <input type="number" class="form-control" name="telefono" id="telefono"
+                           placeholder="Telefono de quien recibe" pattern="([0-9]{7,10})$" formControlName="telefono"
+                           required>
+                    <span *ngIf="(this.purchaseForm.get('telefono')?.dirty || this.purchaseForm.get('telefono')?.touched) &&
+                    this.purchaseForm.get('telefono')?.hasError('required')" class="alert-message">
+                      <fa-icon [icon]="alertField" class="padding-icon-alert"></fa-icon>
+                      Ingrese el telefono de la persona quien recibira el producto
+                    </span>
                   </div>
+
+                  <div class="col-xs-12 col-md-12" style="padding-top: 5%">
+                    <input type="submit" class="btn btn-primary button-ragazza" (click)="this.siguiente()"
+                           value="Siguiente">
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <br>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-              Seleccione los productos
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-               aria-labelledby="panelsStayOpen-headingTwo">
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse
-              plugin adds the appropriate classes that we use to style each element. These classes control the overall
-              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-              custom
-              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within
-              the
-              <code>.accordion-body</code>, though the transition does limit overflow.
+
+          <br>
+
+          <div class="accordion-item bordes-accordion">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                      aria-controls="panelsStayOpen-collapseTwo">
+<!--                      *ngIf="knowValueButton">-->
+                <span style="padding-right: 5%;"><h1 style="font-family: arial; margin-bottom: 0;">2</h1></span>Seleccione
+                los productos
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo"
+                 [ngClass]="knowValueButton ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'"
+                 aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+                <div class="card col-xs-12 col-md-12" >
+                  <img src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/b978c4206b344b03bfa0a9ae0165580a_9366/tenis-runfalcon.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+<!--                <div class="col-xs-12 col-md-12" style="padding-top: 5%">-->
+<!--                  <img src="" alt="" >-->
+<!--                </div>-->
+
+
+              </div>
             </div>
           </div>
-        </div>
 
-        <span><i class="fa-regular fa-cart-shopping"></i></span>
+          <fa-icon [icon]="shopping"></fa-icon>
+          <fa-icon [icon]="shoppingBag"></fa-icon>
+
+        </div>
       </div>
     </form>
   </div>

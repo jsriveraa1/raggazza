@@ -25,6 +25,19 @@
 
 .bordes-accordion{
   /*border: 5px solid #fce4de;*/
-  border: 5px solid #f7d8e3
-;
+  border: 5px solid #f7d8e3;
+}
+
+.button-ragazza{
+  background-color: #f7d8e3;
+  border-color: #E7B8B0;
+  color: black;
+}
+
+.alert-message{
+  color: red;
+}
+
+.padding-icon-alert{
+  padding-right: 2%;
 }
