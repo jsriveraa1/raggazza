@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {faShoppingCart, faShoppingBag, faExclamationCircle	} from "@fortawesome/free-solid-svg-icons";
+import {ListProductsModel} from "../model/list-products.model";
 
 @Component({
   selector: 'app-purchase-order',
@@ -9,12 +9,11 @@ import {faShoppingCart, faShoppingBag, faExclamationCircle	} from "@fortawesome/
 })
 export class PurchaseOrderComponent implements OnInit {
 
-  shopping = faShoppingCart;
-  shoppingBag = faShoppingBag;
-  alertField = faExclamationCircle;
   knowValueButton: boolean;
 
   purchaseForm!: FormGroup;
+
+  listProducts: Array<ListProductsModel> = [];
 
   constructor(private formBuilder: FormBuilder) {
     this.knowValueButton = false;
@@ -40,7 +39,9 @@ export class PurchaseOrderComponent implements OnInit {
     }
   }
 
-  validateForm() {
-    // do something else
+  addProduct(id:number, value: number): void {
+    this.listProducts.push(new ListProductsModel(id, value))
+    sessionStorage.setItem("products", this.listProducts.join());
   }
+
 }
