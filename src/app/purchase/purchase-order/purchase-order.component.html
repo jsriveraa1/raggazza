@@ -1,13 +1,13 @@
 <div class="container">
   <div class="espacio">
-    <div style="background: white; border-radius: 15% 15% 15% 15%;">
+    <div class="borders-radius">
       <h2 id='posible' style="padding: 16px 20px 0 20px"><strong>Orden de compra Raggazza</strong></h2>
       <p style="padding: 0 20px 16px 20px;">Por favor escriba y seleccione la información solicitada.</p>
     </div>
 
     <form [formGroup]="purchaseForm" id="purchaseForm">
-      <div class="col-xs-12 col-md-12 form-group">
-        <div class="accordion accordion-prueba" id="accordionPanelsStayOpenExample">
+      <div class="col-xs-12 col-md-12 form-group" >
+        <div class="accordion" id="accordionPanelsStayOpenExample">
           <div class="accordion-item bordes-accordion">
             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
               <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -84,18 +84,17 @@
 
           <br>
 
-          <div class="accordion-item bordes-accordion">
+          <div class="accordion-item bordes-accordion" *ngIf="this.knowValueButton">
             <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed buttons-accordion" type="button" data-bs-toggle="collapse"
                       data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                       aria-controls="panelsStayOpen-collapseTwo">
-                <!--                      *ngIf="knowValueButton">-->
                 <span style="padding-right: 5%;"><h1 style="font-family: arial; margin-bottom: 0;">2</h1></span>Seleccione
                 los productos
               </button>
             </h2>
             <div id="panelsStayOpen-collapseTwo"
-                 [ngClass]="knowValueButton ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'"
+                 [ngClass]="this.knowValueButton ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'"
                  aria-labelledby="panelsStayOpen-headingTwo">
               <div class="accordion-body">
                 <div class="row">
@@ -140,14 +139,15 @@
                     <div class="card-body card-product">
                       <h5 class="card-title title-product">Collar</h5>
                       <p class="card-text title-product">Descripton</p>
-                      <div class="row-cols-1">
-                        <select class="form-select" name="cantidad" id="cantidad" formControlName="cantidad" required>
+                      <div>
+                        <select class="form-select display-inline w-75" name="cantidad" id="cantidad" formControlName="cantidad" required>
                           <option selected disabled>Cantidad</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
                         </select>
-                        <button id="addProduct" class="btn btn-primary btn-product button-ragazza" (click)="addProduct(2, 999111)">
+                        <button id="addProduct" class="btn btn-primary btn-product button-ragazza display-inline button-ragazza-shopping"
+                                (click)="addProduct(2, 999111)">
                           <i class="bi bi-cart-plus-fill"></i>
                         </button>
                       </div>
@@ -194,14 +194,16 @@
                     <div class="card-body card-product">
                       <h5 class="card-title title-product">Collar</h5>
                       <p class="card-text title-product">Descripton</p>
-                      <div class="row-cols-1">
-                        <select class="form-select" name="cantidad2" id="cantidad2" formControlName="cantidad2" required>
+                      <div>
+                        <select class="form-select display-inline w-75" name="cantidad2" id="cantidad2" formControlName="cantidad2"
+                                required>
                           <option selected disabled>Cantidad</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
                         </select>
-                        <button id="addProduct2" class="btn btn-primary btn-product button-ragazza" (click)="addProduct(2, 110555)">
+                        <button id="addProduct2" class="btn btn-primary btn-product button-ragazza button-ragazza-shopping"
+                                (click)="addProduct(2, 110555)">
                           <i class="bi bi-cart-plus-fill"></i>
                         </button>
                       </div>
@@ -213,29 +215,54 @@
             </div>
           </div>
 
-          <div class="accordion-item bordes-accordion">
+          <br>
+
+          <div class="accordion-item bordes-accordion" *ngIf="this.knowValueShopping">
             <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed buttons-accordion" type="button" data-bs-toggle="collapse"
                       data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                       aria-controls="panelsStayOpen-collapseThree">
-                <!--                      *ngIf="knowValueButton">-->
                 <span style="padding-right: 5%;"><h1 style="font-family: arial; margin-bottom: 0;">3</h1></span>
                 Resumen de la compra
               </button>
             </h2>
             <div id="panelsStayOpen-collapseThree"
-                 [ngClass]="knowValueButton ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'"
-                 aria-labelledby="panelsStayOpen-headingTwo">
+                 [ngClass]="this.knowValueShopping ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'"
+                 aria-labelledby="panelsStayOpen-headingThree">
               <div class="accordion-body">
-                <div style="display: inline;">
+                <p class="organization-p-shopping-summary">TOTAL (2 productos)</p>
+                <p class="price">$60.000</p>
+                <div class="col-sm-12">
                   <img
                     src="https://media-la-cdn.oriflame.com/-/media/images/externalImage.ashx?externalMediaId=product-management-media%2F44972%2F44972.png%3Fversion%3D1633424405&w=896&bc=%23f5f5f5&ib=%23f5f5f5&h=896&q=30"
-                    alt="..." width="100px" height="100px">
-                  <h6 style="display: inline;">Collar</h6>
-                  <p style="display: inline;">Precio: $30000</p>
-                  <p>Cantidad: 1</p>
+                    alt="..." width="100px" height="100px" class="organization-img-shopping-summary">
+                  <div>
+                    <h6 class="display-inline">Collar</h6>
+                    <br>
+                    <p class="display-inline">$30.000</p>
+                    <br>
+                    <p class="display-inline">Cantidad: 1</p>
+                  </div>
+
                 </div>
-                <h6>Resumen</h6>
+                <hr style="clear: both; background-color: white;">
+                <div class="col-sm-12">
+                  <img
+                    src="https://media-la-cdn.oriflame.com/-/media/images/externalImage.ashx?externalMediaId=product-management-media%2F44972%2F44972.png%3Fversion%3D1633424405&w=896&bc=%23f5f5f5&ib=%23f5f5f5&h=896&q=30"
+                    alt="..." width="100px" height="100px" style="display: inline; float: left; padding-right: 5%">
+                  <div>
+                    <h6 style="display: inline;">Collar</h6>
+                    <br>
+                    <p style="display: inline;">$30.000</p>
+                    <br>
+                    <p style="display: inline;">Cantidad: 1</p>
+                  </div>
+
+                </div>
+                <div class="organization-price-final">
+                  <p class="organization-p-shopping-summary">Total: $60.000</p>
+
+                </div>
                 <p *ngFor="let item of listProducts">{{item['cantidad']}}</p>
               </div>
             </div>

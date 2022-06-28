@@ -1,4 +1,7 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');*/
+.borders-radius{
+  background: white;
+  border-radius: 20px;
+}
 
 .container {
   /*background-color: white;*/
@@ -56,5 +59,39 @@
 
 .no-border{
   border: none;
+}
+
+.display-inline{
+  display: inline;
+}
+
+.organization-img-shopping-summary{
+  display: inline;
+  float: left;
+  padding-right: 5%;
+}
+
+.organization-p-shopping-summary{
+  margin-bottom: 0;
+}
+
+.price{
+  font-size: 20px;
+}
+
+.organization-price-final{
+  padding-top: 6.5%;
+  clear: both;
+  font-size: 25px;
+}
+
+.button-ragazza-shopping{
+  margin-top: 0;
+  margin-left: 5%;
+  height: 39px;
+}
+
+.buttons-accordion{
+  background-color: #faf1ef;
 }
 

@@ -10,6 +10,7 @@ import {ListProductsModel} from "../model/list-products.model";
 export class PurchaseOrderComponent implements OnInit {
 
   knowValueButton: boolean;
+  knowValueShopping: boolean;
 
   purchaseForm!: FormGroup;
 
@@ -17,6 +18,7 @@ export class PurchaseOrderComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.knowValueButton = false;
+    this.knowValueShopping = false;
   }
 
   ngOnInit(): void {
@@ -40,6 +42,7 @@ export class PurchaseOrderComponent implements OnInit {
   }
 
   addProduct(id:number, value: number): void {
+    this.knowValueShopping = true;
     this.listProducts.push(new ListProductsModel(id, value))
     sessionStorage.setItem("products", this.listProducts.join());
   }
