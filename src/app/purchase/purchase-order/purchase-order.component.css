@@ -1,0 +1,97 @@
+.borders-radius{
+  background: white;
+  border-radius: 20px;
+}
+
+.container {
+  /*background-color: white;*/
+}
+
+.accordion-button:not(.collapsed) {
+  color: black;
+  /*font-weight: bold;*/
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #faf1ef;
+}
+
+.espacio {
+  padding: 5% 5% 5% 5%;
+}
+
+.card_test {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom, #E7B8B0, #E7B8B0);
+  border-image-slice: 1;
+}
+
+.bordes-accordion{
+  /*border: 5px solid #fce4de;*/
+  border: 5px solid #f7d8e3;
+}
+
+.button-ragazza{
+  background-color: #f7d8e3;
+  border-color: #E7B8B0;
+  color: black;
+}
+
+.alert-message{
+  color: red;
+}
+
+.padding-icon-alert{
+  padding-right: 2%;
+}
+
+.card-product{
+  padding: 0 0 5% 0;
+}
+
+.title-product{
+  margin: 0 0 0 0;
+}
+
+.btn-product{
+  margin-top: 2%;
+}
+
+.no-border{
+  border: none;
+}
+
+.display-inline{
+  display: inline;
+}
+
+.organization-img-shopping-summary{
+  display: inline;
+  float: left;
+  padding-right: 5%;
+}
+
+.organization-p-shopping-summary{
+  margin-bottom: 0;
+}
+
+.price{
+  font-size: 20px;
+}
+
+.organization-price-final{
+  padding-top: 6.5%;
+  clear: both;
+  font-size: 25px;
+}
+
+.button-ragazza-shopping{
+  margin-top: 0;
+  margin-left: 5%;
+  height: 39px;
+}
+
+.buttons-accordion{
+  background-color: #faf1ef;
+}
+
