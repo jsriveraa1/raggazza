@@ -84,7 +84,8 @@
 
           <br>
 
-          <div class="accordion-item bordes-accordion" *ngIf="this.knowValueButton">
+          <div class="accordion-item bordes-accordion">
+<!--            *ngIf="this.knowValueButton">-->
             <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
               <button class="accordion-button collapsed buttons-accordion" type="button" data-bs-toggle="collapse"
                       data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
@@ -99,38 +100,38 @@
               <div class="accordion-body">
                 <div class="row">
                   <div class="card col-sm-4 col-md-4 no-border">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                       <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
                                 aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
                       </div>
                       <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <div class="carousel-item active" data-bs-interval="3000">
                           <img
                             src="https://media-la-cdn.oriflame.com/-/media/images/externalImage.ashx?externalMediaId=product-management-media%2F44972%2F44972.png%3Fversion%3D1633424405&w=896&bc=%23f5f5f5&ib=%23f5f5f5&h=896&q=30"
                             class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="3000">
                           <img
                             src="https://www.aristocrazy.com/dw/image/v2/BCBK_PRD/on/demandware.static/-/Sites-Aristocrazy-master-catalog/default/dw761b4c68/images/hi-res/J04708-02-TQ.jpg?sw=600&sh=600&sm=fit"
                             class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="3000">
                           <img
                             src="https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/39d3295008f3432dba85ad6d013faee5_9366/tenis-duramo-sl-2.0.jpg"
                             class="d-block w-100" alt="...">
                         </div>
                       </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                               data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                       </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
                               data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
@@ -140,15 +141,18 @@
                       <h5 class="card-title title-product">Collar</h5>
                       <p class="card-text title-product">Descripton</p>
                       <div>
-                        <select class="form-select display-inline w-75" name="cantidad" id="cantidad" formControlName="cantidad" required>
+                        <select class="form-select display-inline w-50" name="cantidad" id="cantidad" formControlName="cantidad" required>
                           <option selected disabled>Cantidad</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
                         </select>
-                        <button id="addProduct" class="btn btn-primary btn-product button-ragazza display-inline button-ragazza-shopping"
-                                (click)="addProduct(2, 999111)">
-                          <i class="bi bi-cart-plus-fill"></i>
+                        <button #buttonUno id="addProduct_2" class="btn btn-primary btn-product button-ragazza display-inline button-ragazza-shopping "
+                                (click)="addProduct(2, 999111, buttonUno)" style="float: right;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+                          </svg>
+                          <span style="vertical-align: -0.125rem"> Añadir</span>
                         </button>
                       </div>
                     </div>
@@ -202,8 +206,8 @@
                           <option>2</option>
                           <option>3</option>
                         </select>
-                        <button id="addProduct2" class="btn btn-primary btn-product button-ragazza button-ragazza-shopping"
-                                (click)="addProduct(2, 110555)">
+                        <button #buttonDos id="addProduct_3" class="btn btn-primary btn-product button-ragazza button-ragazza-shopping"
+                                (click)="addProduct(3, 110555, buttonDos)">
                           <i class="bi bi-cart-plus-fill"></i>
                         </button>
                       </div>
