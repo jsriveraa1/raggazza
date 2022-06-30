@@ -25,5 +25,6 @@ jobs:
           title: Update branch **dev**
           body: Dev branch update, add tweak and new features
           base: dev
+          branch: prueba_validate
           #branch: ${{steps.branch-name.outputs.current_branch}}
 
