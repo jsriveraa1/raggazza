@@ -24,7 +24,7 @@ jobs:
           commit-message: Update branch **dev**
           title: Update branch **dev**
           body: Dev branch update, add tweak and new features
-          base: dev
+#          base: dev
           branch: prueba_validate
-          #branch: ${{steps.branch-name.outputs.current_branch}}
+#          branch: ${{steps.branch-name.outputs.current_branch}}
 
