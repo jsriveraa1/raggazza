@@ -6,9 +6,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    if: "! contains(github.event.head_commit.message, 'UNIFICAR')"
+    if: "contains(github.event.head_commit.message, 'UNIFICAR')"
 
     steps:
-      - name: Actualización
-        run: echo "Ingreso"
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Create Pull Request
+        run: echo "Create pull request."
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Update branch **dev**
+          title: Update branch **dev**
+          body: Dev branch update, add tweak and new features
+          branch: dev
+
 
