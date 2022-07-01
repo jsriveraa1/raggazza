@@ -11,13 +11,15 @@ jobs:
     steps:
       - id: automerge
         name: automerge
-      - uses: actions/checkout@v3
+      - id: checkout
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: tj-actions/branch-names@v5.2
+      - id: know_branch
+        uses: tj-actions/branch-names@v5.2
         name: Get branch names
-        id: branch-name
-      - name: Git automerge
+      - id: automerge
+        name: Git automerge
         run: |
           git checkout dev
           git merge ${{steps.branch-name.outputs.current_branch}}
