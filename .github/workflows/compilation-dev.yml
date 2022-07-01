@@ -14,6 +14,7 @@ jobs:
           fetch-depth: 0
       - uses: tj-actions/branch-names@v5.2
         name: Get branch names
+      - name: know branch current
         run: echo "${{steps.branch-name.outputs.current_branch}}"
       - id: automerge
         name: Git automerge
