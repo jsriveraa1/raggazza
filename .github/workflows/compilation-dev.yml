@@ -14,9 +14,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Get branch names
+      - uses: tj-actions/branch-names@v5.2
+        name: Get branch names
         id: branch-name
-        uses: tj-actions/branch-names@v5.2
       - name: Git automerge
         run: |
           git checkout dev
