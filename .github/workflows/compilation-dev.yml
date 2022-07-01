@@ -20,7 +20,7 @@ jobs:
         name: Get branch names
       - id: automerge
         name: Git automerge
-        run: |
+      - run: |
           git checkout dev
           git merge ${{steps.branch-name.outputs.current_branch}}
 
