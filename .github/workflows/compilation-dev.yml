@@ -9,22 +9,13 @@ jobs:
     if: "contains(github.event.head_commit.message, 'UNIFICAR')"
 
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Get branch names
-        id: branch-name
-        uses: tj-actions/branch-names@v5.2
-      - name: Current branch name
-        run: |
-          echo "${{ steps.branch-name.outputs.current_branch }}"
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          commit-message: Update branch **dev**
-          title: Update branch **dev**
-          body: Dev branch update, add tweak and new features
-#          base: dev
-          branch: dev
-#          branch: ${{steps.branch-name.outputs.current_branch}}
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_METHOD: "squash"
+          MERGE_COMMIT_MESSAGE: "pull-request-description"
+
+
 
