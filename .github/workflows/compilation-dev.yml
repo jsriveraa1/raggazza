@@ -9,8 +9,6 @@ jobs:
     if: "contains(github.event.head_commit.message, 'UNIFICAR')"
 
     steps:
-      - id: automerge
-        name: automerge
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -18,9 +16,8 @@ jobs:
         name: Get branch names
       - id: automerge
         name: Git automerge
-      - run: |
-          git checkout dev
-          git merge ${{steps.branch-name.outputs.current_branch}}
+        run: git checkout dev
+#          git merge ${{steps.branch-name.outputs.current_branch}}
 
 
 
