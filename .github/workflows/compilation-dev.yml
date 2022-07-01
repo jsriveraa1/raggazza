@@ -11,12 +11,10 @@ jobs:
     steps:
       - id: automerge
         name: automerge
-      - id: checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - id: know_branch
-        uses: tj-actions/branch-names@v5.2
+      - uses: tj-actions/branch-names@v5.2
         name: Get branch names
       - id: automerge
         name: Git automerge
