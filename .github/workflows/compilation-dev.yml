@@ -11,12 +11,17 @@ jobs:
     steps:
       - id: automerge
         name: automerge
-        uses: "pascalgn/automerge-action@v0.15.3"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_METHOD: "merge"
-          MERGE_COMMIT_MESSAGE: "pull-request-description"
-          BASE_BRANCHES: "dev"
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Get branch names
+        id: branch-name
+        uses: tj-actions/branch-names@v5.2
+      - name: Git automerge
+        run: |
+          git checkout dev
+          git merge ${{steps.branch-name.outputs.current_branch}}
+
 
 
 
