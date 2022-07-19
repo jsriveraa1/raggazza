@@ -80,9 +80,12 @@
 }
 
 .organization-price-final{
-  padding-top: 6.5%;
   clear: both;
   font-size: 25px;
+}
+
+.organization-div-products-selected{
+  margin-bottom: 1rem;
 }
 
 .button-ragazza-shopping{
@@ -99,3 +102,10 @@
   background-color: #faf1ef;
 }
 
+.form-margin-top-div{
+  margin-top: 0.5rem;
+}
+
+.form-margin-top-div-button{
+  margin-top: 0.8rem;
+}
